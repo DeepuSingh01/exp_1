@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Product Search Tool</h1>
+
+    <div>
+        <label for="search">Search for a product:</label>
+        <input type="text" id="search" placeholder="Search by keywords">
+    </div>
+
+    <h3>Search Results:</h3>
+    <ul id="results"></ul>
+
+    <h3>Admin Panel</h3>
+    <button onclick="uploadExcel()">Upload Excel</button>
+
+    <script>
+        let products = [];
+
+        // Fetch the products JSON from GitHub (this would be updated through the admin panel in reality)
+        fetch("products.json")
+            .then(response => response.json())
+            .then(data => {
+                products = data;
+                updateSearchResults();
+            });
+
+        function updateSearchResults() {
+            const searchTerm = document.getElementById("search").value.toLowerCase();
+            const results = products.filter(product =>
+                Object.values(product).some(value =>
+                    value.toString().toLowerCase().includes(searchTerm)
+                )
+            );
+            displayResults(results);
+        }
+
+        function displayResults(results) {
+            const resultsList = document.getElementById("results");
+            resultsList.innerHTML = '';
+            results.forEach(product => {
+                const li = document.createElement("li");
+                li.textContent = JSON.stringify(product);
+                resultsList.appendChild(li);
+            });
+        }
+
+        document.getElementById("search").addEventListener("input", updateSearchResults);
+
+        // Admin function to upload excel (for now, this will be a placeholder function)
+        function uploadExcel() {
+            alert("Excel upload functionality will be implemented here.");
+        }
+    </script>
+</body>
+</html>
