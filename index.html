@@ -2,36 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Product Search Tool</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Search Tool</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="login-container">
-        <h2>Admin Login</h2>
-        <input type="password" id="password-input" placeholder="Enter password" />
-        <button onclick="login()">Login</button>
-        <p id="login-error" class="error-msg"></p>
-    </div>
+  <div id="login-container">
+    <h2>Admin Login</h2>
+    <input type="password" id="password-input" placeholder="Enter password" />
+    <button onclick="login()">Login</button>
+    <p id="login-error" class="error-msg"></p>
+  </div>
 
-    <div id="app" style="display:none;">
-        <h1>Product Search Tool</h1>
-        <input type="text" id="searchInput" placeholder="Search products..." />
-        <div id="results"></div>
+  <div id="app" style="display:none;">
+    <h1>Product Search Tool</h1>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+    <div id="results"></div>
 
-        <h2>Admin Panel</h2>
-        <input type="file" id="excelUpload" accept=".xlsx" />
-        <p id="upload-status"></p>
+    <h2>Admin Panel</h2>
+    <input type="file" id="excelUpload" accept=".xlsx" />
+    <button onclick="uploadExcel()">Upload Excel</button>
+    <p id="upload-status"></p>
 
-        <h3>Reset Admin Password</h3>
-        <input type="password" id="universalPass" placeholder="Universal Password"/>
-        <input type="password" id="newAdminPass" placeholder="New Admin Password"/>
-        <button onclick="resetAdminPassword()">Reset Password</button>
-        <p id="reset-status"></p>
-    </div>
+    <h3>Reset Admin Password</h3>
+    <input type="password" id="universalPass" placeholder="Universal Password"/>
+    <input type="password" id="newAdminPass" placeholder="New Admin Password"/>
+    <button onclick="resetAdminPassword()">Reset Password</button>
+    <p id="reset-status"></p>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

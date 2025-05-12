@@ -1,26 +1,26 @@
 
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f2f2f2;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f2f2f2;
 }
 input {
-    padding: 8px;
-    margin: 5px;
+  padding: 8px;
+  margin: 5px;
 }
 button {
-    padding: 8px 12px;
-    margin: 5px;
+  padding: 8px 12px;
+  margin: 5px;
 }
-#error, .error-msg {
-    color: red;
+.error-msg {
+  color: red;
 }
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
 }
 th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
 }
